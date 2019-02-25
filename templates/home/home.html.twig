@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+{% endblock %}
+{% block body %}
+    <h1>Inicio</h1>
+    <p>Bienvenido {% if app.user is null %}al blog de Xavi, <br></n>puedes empezar creando tu usuario o iniciando sesion{% endif %} {% if app.user is not null %}{{ app.user.username }}{% endif %}</p>
+{% endblock %}
