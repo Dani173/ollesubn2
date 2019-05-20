@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ExerciseController!{% endblock %}
+
+{% block body %}
+    {{ dump(exercises) }}
+    {% for exercise in exercises %}
+        <div class="container">
+
+            <div class="titulo">
+                <a ><h1>{{ exercise.name }}</h1></a>
+                <body>
+                <button
+                         onClick="document.getElementById('oculto').style.visibility='visible'">Ver Tutorial</button>
+
+
+                    <iframe id="oculto" style="visibility:hidden" width="560" height="315" src="{{ exercise.multimedia }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                    </iframe>
+
+                </body>
+
+
+
+
+
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

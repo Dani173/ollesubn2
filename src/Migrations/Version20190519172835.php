@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190131151618 extends AbstractMigration
+final class Version20190519172835 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,8 @@ final class Version20190131151618 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE post ADD content LONGTEXT DEFAULT NULL, ADD created_at DATETIME NOT NULL, ADD published_at DATETIME DEFAULT NULL, ADD modified_at DATETIME DEFAULT NULL, ADD author VARCHAR(255) NOT NULL');
+        $this->addSql('CREATE TABLE routine (id INT AUTO_INCREMENT NOT NULL, level_id INT DEFAULT NULL, duration INT NOT NULL, name VARCHAR(255) NOT NULL, INDEX IDX_4BF6D8D65FB14BA7 (level_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
+        $this->addSql('ALTER TABLE routine ADD CONSTRAINT FK_4BF6D8D65FB14BA7 FOREIGN KEY (level_id) REFERENCES level (id)');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +31,6 @@ final class Version20190131151618 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE post DROP content, DROP created_at, DROP published_at, DROP modified_at, DROP author');
+        $this->addSql('DROP TABLE routine');
     }
 }

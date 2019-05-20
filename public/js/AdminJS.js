@@ -18,3 +18,5 @@ document.body.onclick = function(e) {   //when the document body is clicked
         }
     }
 }
+
+

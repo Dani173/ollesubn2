@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Level;
 use App\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -28,9 +29,12 @@ class UserController extends AbstractController
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
+
         $user = new User();
-        $user->setRoles(['ROLE_USER']);
+
+        $user->setRoles(['ROLE_FREEUSER']);
         $user->setIsActive(true);
+
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
