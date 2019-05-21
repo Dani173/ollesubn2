@@ -89,6 +89,7 @@ class User implements UserInterface
     public function __construct()
     {
         $this->level_id = new ArrayCollection();
+
     }
 
     public function getId(): ?int

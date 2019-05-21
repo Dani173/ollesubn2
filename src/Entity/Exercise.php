@@ -49,9 +49,11 @@ class Exercise
     private $routine;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Musclegroups", mappedBy="exercise")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Musclegroups", inversedBy="exercise")
      */
-    private $musclegroup;
+    private $muscle;
+
+
 
     public function __construct()
     {
@@ -150,31 +152,17 @@ class Exercise
         return $this;
     }
 
-    /**
-     * @return Collection|Musclegroups[]
-     */
-    public function getMusclegroup(): Collection
+    public function getMuscle(): ?Musclegroups
     {
-        return $this->musclegroup;
+        return $this->muscle;
     }
 
-    public function addMusclegroup(Musclegroups $musclegroup): self
+    public function setMuscle(?Musclegroups $muscle): self
     {
-        if (!$this->musclegroup->contains($musclegroup)) {
-            $this->musclegroup[] = $musclegroup;
-            $musclegroup->addExercise($this);
-        }
+        $this->muscle = $muscle;
 
         return $this;
     }
 
-    public function removeMusclegroup(Musclegroups $musclegroup): self
-    {
-        if ($this->musclegroup->contains($musclegroup)) {
-            $this->musclegroup->removeElement($musclegroup);
-            $musclegroup->removeExercise($this);
-        }
 
-        return $this;
-    }
 }

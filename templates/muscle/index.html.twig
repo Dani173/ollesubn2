@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ExerciseController!{% endblock %}
+
+{% block body %}
+
+    {% for musclegroups in musclegroup %}
+        <div class="container">
+
+            <div class="titulo">
+
+                <a href="{{ path('exercisemuscle',{'id':musclegroups.id} )}}"><h1>{{ musclegroups.name }}</h1></a>
+                <img src="{{ musclegroups.img }}" style="height: 100px;">
+
+                </body>
+
+
+
+
+
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+

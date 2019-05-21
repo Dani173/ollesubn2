@@ -90,33 +90,7 @@ class Routine
         return $this;
     }
 
-    /**
-     * @return Collection|Exercise[]
-     */
-    public function getExercises(): Collection
-    {
-        return $this->exercises;
-    }
 
-    public function addExercise(Exercise $exercise): self
-    {
-        if (!$this->exercises->contains($exercise)) {
-            $this->exercises[] = $exercise;
-            $exercise->addRoutine($this);
-        }
-
-        return $this;
-    }
-
-    public function removeExercise(Exercise $exercise): self
-    {
-        if ($this->exercises->contains($exercise)) {
-            $this->exercises->removeElement($exercise);
-            $exercise->removeRoutine($this);
-        }
-
-        return $this;
-    }
 
     /**
      * @return Collection|Challenges[]

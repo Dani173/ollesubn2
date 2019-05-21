@@ -31,6 +31,7 @@ class UserController extends AbstractController
     {
 
         $user = new User();
+    $level=new Level();
 
         $user->setRoles(['ROLE_FREEUSER']);
         $user->setIsActive(true);

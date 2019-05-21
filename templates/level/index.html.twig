@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Level{% endblock %}
+
+{% block body %}
+    {% for level in levels %}
+
+{% if {{ level.price }} > 0 %}
+
+        <a ><h1 style="color: red">{{ level.name }}</h1>
+            <h2 style="color: red">{{ level.price }}€</h2></a>
+        {% else %}
+            <a ><h1>{{  level.name }}</h1>
+                <h2>{{ level.price }}€</h2></a>
+            {% endif %}
+
+
+        </div>
+
+    {% endfor %}
+{% endblock %}

@@ -23,8 +23,14 @@ class Musclegroups
      */
     private $name;
 
+
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Exercise", inversedBy="musclegroup")
+     * @ORM\Column(type="string", length=255,nullable=true)
+     */
+    private $img;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Exercise", mappedBy="muscle")
      */
     private $exercise;
 
@@ -72,6 +78,18 @@ class Musclegroups
         if ($this->exercise->contains($exercise)) {
             $this->exercise->removeElement($exercise);
         }
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(string $img): self
+    {
+        $this->img = $img;
 
         return $this;
     }
