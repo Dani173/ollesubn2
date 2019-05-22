@@ -5,7 +5,7 @@
 {% block body %}
     {% for level in levels %}
 
-{% if {{ level.price }} > 0 %}
+{% if {{ level.price }} == 0 %}
 
         <a ><h1 style="color: red">{{ level.name }}</h1>
             <h2 style="color: red">{{ level.price }}€</h2></a>
