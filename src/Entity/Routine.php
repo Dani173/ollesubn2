@@ -43,10 +43,16 @@ class Routine
      */
     private $challenges;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\User", mappedBy="routines")
+     */
+    private $userfav;
+
     public function __construct()
     {
         $this->exercises = new ArrayCollection();
         $this->challenges = new ArrayCollection();
+        $this->userfav = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -115,6 +121,34 @@ class Routine
         if ($this->challenges->contains($challenge)) {
             $this->challenges->removeElement($challenge);
             $challenge->removeRoutine($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUserfav(): Collection
+    {
+        return $this->userfav;
+    }
+
+    public function addUserfav(User $userfav): self
+    {
+        if (!$this->userfav->contains($userfav)) {
+            $this->userfav[] = $userfav;
+            $userfav->addRoutine($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUserfav(User $userfav): self
+    {
+        if ($this->userfav->contains($userfav)) {
+            $this->userfav->removeElement($userfav);
+            $userfav->removeRoutine($this);
         }
 
         return $this;

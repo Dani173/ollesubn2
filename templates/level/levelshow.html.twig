@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ExerciseController!{% endblock %}
+
+{% block body %}
+
+
+
+
+    {% for level in levels %}
+
+        {% if app.user is null %}
+        <a href="{{ path('routine_exercises',{'id':level.id} )}}"><h1>{{ level.name}}</h1></a>
+{% else %}
+    <a href="{{ path('routine_exercises',{'id':level.id} )}}"><h1>{{ level.name}}</h1><a href="{{ path('addFav',{'id':level.id,'user':app.user.id})}}">fav</a></a>
+
+        {% endif %}
+        </div>
+
+    {% endfor %}
+
+
+
+
+
+{% endblock %}

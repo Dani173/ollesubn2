@@ -10,7 +10,7 @@
 
 }
 body {
-    background-color:#000;
+    background-color: #000000;
 }
 #menu {
     height:100px;
@@ -69,6 +69,7 @@ body {
 #subtitulo{
     font-size:50px;
     color:#CC3B3B;
+    text-align: center;
 }
 #texto {
     color:#FFF;
@@ -205,11 +206,22 @@ ul li {display:inline-block;}
     top:1px;
 }
 
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 40px;
+}
 footer {
+
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 70px; //same height as the margin to the bottom of the body
+    height: 40px;
+
 }
 
 #debajo {
@@ -341,50 +353,14 @@ button:focus {
 }
 
 .container {
-    width: 300px;
-    margin: 0px auto 0;
+    float: left;
+    margin-left: 100px;
+    margin-top: 40px;
+    margin-right: 100px;
 }
 
 
-.reg-container {
-    display:none;
-    position:absolute;
-    background-color:#0F0;
-    margin-top:100px;
 
-}
-
-.reg-form {
-
-    position: absolute;
-    border-radius: 4px;
-    box-shadow: 0 4px 0 #d0d0d0;
-    width:450px;
-    height:300px;
-    margin-top:10px;
-    z-index: 100;
-    background-color:#DAC5C5;
-}
-.reg-form input {
-    width: 50%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 0;
-    outline: 0;
-    background: #f1f1f1;
-    font-weight: 200;
-    font-style: italic;
-    border-radius: 2px;
-}
-.reg-form input:last-child {
-    margin-bottom: 0;
-}
-.reg-form input[type="submit"] {
-    width:30%;
-    color: #ffF;
-    background: #CC3B3B;
-    font-style: normal;
-}
 
 /*---------------------------------------------*/
 /*---------- Input Validation Styles ----------*/
@@ -643,6 +619,7 @@ fieldset.radioEmpty input:focus{
 }
 #regtitulo {
     text-align:center;
+    margin-top: 20px;
 }
 
 .inputreg{
@@ -650,4 +627,108 @@ fieldset.radioEmpty input:focus{
 }
 #video{
     display: none;
+}
+
+#entrar {
+    width:30%;
+    color: #ffF;
+    background: #CC3B3B;
+    font-style: normal;
+}
+
+#registro {
+    background-color: #DAC5C5;
+    margin-left: 500px;
+    margin-right: 500px;
+    border-radius: 20px;
+    border: 1px solid;
+    height: 350px;
+
+}
+#fondoreg{
+    background-image: url('../Imagenes/imagenRegistro.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+
+}
+
+.reg-form {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.reg-form2 {
+    margin-left: 52px;
+    margin-top: 10px;
+}
+
+.reg-form3 {
+    margin-left: 58px;
+    margin-top: 10px;
+}
+
+.reg-form4 {
+    margin-left: 17px;
+    margin-top: 10px;
+}
+
+.reg-form5 {
+    margin-left: 42px;
+    margin-top: 10px;
+}
+.reg-form input {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid;
+    outline: 0;
+    background: #f1f1f1;
+    font-weight: 200;
+    font-style: italic;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.reg-form input[type="submit"] {
+    width:90%;
+    color: white;
+    background: black;
+    margin-top: 20px;
+    align-items: center;
+}
+
+#reg-button {
+    text-decoration: none;
+    color: black;
+}
+
+#almilialeregalaronelcredito{
+    margin-left: 200px;
+}
+
+.exercisebloque {
+    width: 20%;
+    float: left;
+}
+
+.tituloej{
+    text-decoration: none;
+    color: #E5E5E5;
+}
+
+#rutinabloque {
+    width: 33%;
+    float: left;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.exerciseimg {
+    width: 100px;
+    height: 200px;
+}
+
+#margin-reg {
+    padding-top: 60px;
 }

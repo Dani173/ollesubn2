@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PerfilController!{% endblock %}
+
+{% block body %}
+
+    <a href="{{ path('app_perfil_cambiar',{'id':app.user.id} )}}">Configurar mis datos</a>
+    <a href="{{ path('app_mostrar_fav',{'id':app.user.id} )}}">Mis Rutinas</a>
+    <a></a>
+{% endblock %}

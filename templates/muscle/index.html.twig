@@ -3,14 +3,15 @@
 {% block title %}Hello ExerciseController!{% endblock %}
 
 {% block body %}
-
+    <p id="subtitulo">Ejercicios por grupos musculares</p>
     {% for musclegroups in musclegroup %}
-        <div class="container">
 
-            <div class="titulo">
+        <div id="rutinabloque">
 
-                <a href="{{ path('exercisemuscle',{'id':musclegroups.id} )}}"><h1>{{ musclegroups.name }}</h1></a>
-                <img src="{{ musclegroups.img }}" style="height: 100px;">
+            <div>
+
+                <a href="{{ path('exercisemuscle',{'id':musclegroups.id} )}}"><h1 class="tituloej">{{ musclegroups.name }}</h1></a>
+                <a href="{{ path('exercisemuscle',{'id':musclegroups.id} )}}"><img class="exerciseimg" src="{{ musclegroups.img }}" align="center"></a>
 
                 </body>
 
@@ -19,6 +20,9 @@
 
 
             </div>
+        </div>
+        <div>
+            <p>PARRAFO PARA QUE NO SE JODA EL FOOTER</p>
         </div>
     {% endfor %}
 {% endblock %}
